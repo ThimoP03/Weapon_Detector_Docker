@@ -1,0 +1,25 @@
+# Stap 1: Gebruik een nieuwere basis image met Debian Buster
+FROM python:3.7-slim-buster
+
+# Stap 2: Stel de werkdirectory in de container in
+WORKDIR /cnn-project-thimo
+
+# Stap 3: Update pip naar de nieuwste versie
+RUN python -m pip install --upgrade pip
+
+# Stap 4: Installeer systeemafhankelijkheden voor OpenCV
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0
+
+# Stap 5: Kopieer de requirements.txt van de project root naar de container
+COPY ../requirements.txt .
+
+# Stap 6: Installeer vereiste Python Libraries van requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stap 7: Kopieer alle projectbestanden en mappen naar de container
+COPY ../ .
+
+# Stap 8: Definieer PYTHONUNBUFFERED wat ervoor zorgt dat de output van Python direct wordt weergegeven
+ENV PYTHONUNBUFFERED=1
