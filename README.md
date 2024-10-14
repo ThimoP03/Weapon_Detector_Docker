@@ -36,7 +36,7 @@ Deze repo behoort tot s1142306
 - Start de container met de volgende opdracht, waarbij je de map met afbeeldingen koppelt:
 
   ```bash
-  docker run -it --name <container_naam> -v <pad_naar_afbeeldingen>:/cnn-project/Prediction_Images/todo cnn_model_image bash
+  docker run -it --name <container_naam> -v <pad_naar_afbeeldingen>:/cnn-project-thimo/Prediction_Images/todo cnn_model_image bash
   ```
 
 ### Stap 7: Voer de voorspelling uit
@@ -53,7 +53,7 @@ Deze repo behoort tot s1142306
 - Typ het volgende commando om de voorspelde afbeeldingen van de container naar je host te kopiëren:
 
   ```bash
-  docker cp <container_naam_of_id>:/cnn-project/Prediction_Images/done <pad_naar_folder_host>
+  docker cp <container_naam_of_id>:/cnn-project-thimo/Prediction_Images/done <pad_naar_folder_host>
   ```
 
 ### Stap 10: Beoordeel de voorspelde afbeeldingen
