@@ -43,7 +43,7 @@ Deze repo behoort tot s1142306
 - Binnen de Docker-bash typ je het volgende om de voorspelling te starten:
 
   ```bash
-  docker run -it --name <container_naam> -v <pad_naar_afbeeldingen>:/cnn-project/Prediction_Images/todo cnn_model_image bash
+  python predict.py
   ```
 
 ### Stap 8: Open een nieuwe command prompt
